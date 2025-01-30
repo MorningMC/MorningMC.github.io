@@ -1,0 +1,20 @@
+{
+  "name": "personal-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "@react-facet/core": "^0.6.1",
+    "@react-facet/dom-fiber": "^0.6.1",
+    "yarn": "^1.22.22"
+  }
+}
