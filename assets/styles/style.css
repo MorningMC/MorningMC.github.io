@@ -8,6 +8,10 @@ pre {
     font-size: 12px;
 }
 
+i {
+    color:gray;
+}
+
 @font-face {
     font-family: "Fixedsys Excelsior 3.01";
     src: url("/assets/fonts/FSEX300.ttf");
