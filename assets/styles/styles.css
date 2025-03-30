@@ -6,6 +6,7 @@ body {
 pre {
     font-family: "Fixedsys Excelsior 3.01", monospace;
     font-size: 12px;
+    tab-size: 4;
 }
 
 em {
