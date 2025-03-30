@@ -8,8 +8,16 @@ pre {
     font-size: 12px;
 }
 
-i {
+em {
     color:gray;
+}
+
+a {
+    color: white;
+}
+
+noscript {
+    color: red;
 }
 
 @font-face {
