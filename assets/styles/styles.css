@@ -17,6 +17,10 @@ a {
     color: inherit;
 }
 
+time {
+    font-weight: bold;
+}
+
 noscript {
     color: red;
 }
