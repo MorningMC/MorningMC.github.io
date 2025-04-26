@@ -9,12 +9,25 @@ pre {
     tab-size: 4;
 }
 
+h1 {
+    font-size: inherit;
+    font-weight: bold;
+    color: gold;
+    text-decoration: underline;
+}
+
 em {
     color: gray;
 }
 
 a {
     color: inherit;
+    text-decoration: dotted underline;
+    text-decoration-color: lightgray;
+}
+
+a:hover {
+    text-decoration-color: lightskyblue;
 }
 
 time {
