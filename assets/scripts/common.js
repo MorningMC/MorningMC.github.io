@@ -1,0 +1,75 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+
+    // Get the current <script> element and its data-selected-index attribute
+    const currentScript = document.querySelector('script[src$="common.js"]');
+    const selectedIndex = parseInt(currentScript?.getAttribute("data-selected-index") ?? "-1", 10);
+
+    // Define the navigation links and labels
+    const navLinks = [
+        { href: "index.html", label: "Index" },
+        { href: "projects.html", label: "Projects" },
+        { href: "videos.html", label: "Videos" },
+        { href: "notepad.html", label: "Notepad" },
+        { href: "utils.html", label: "Utils" },
+        { href: "debug.html", label: "Debug" }
+    ];
+
+    // Generate the navigation bar with > < marker for selected item
+    const navBar = navLinks.map((link, i) => {
+        const mark = i === selectedIndex ? ">" : " ";
+        const backMark = i === selectedIndex ? "<" : " ";
+        return mark + " <a href=\"" + link.href + "\">" + link.label + "</a> " + backMark;
+    }).join("  ");
+
+    // Header HTML content with placeholder for dynamic time
+    const headerHTML = "<pre>\n" +
+        "                                                            _____\n" +
+        " /'\\_/`\\                        __                  /'\\_/`\\/\\   _`\\\n" +
+        "/\\      \\    ___   _ __    ___ /\\_\\    ___      __ /\\      \\ \\ \\/\\_\\\n" +
+        "\\ \\ \\__\\ \\  / __`\\/\\`'__\\/' _ `\\/\\ \\ /' _ `\\  /'_ `\\ \\ \\__\\ \\ \\ \\/_/_\n" +
+        " \\ \\ \\_/\\ \\/\\ \\L\\ \\ \\ \\/ /\\ \\/\\ \\ \\ \\/\\ \\/\\ \\/\\ \\L\\ \\ \\ \\_/\\ \\ \\ \\L\\ \\\n" +
+        "  \\ \\_\\\\ \\_\\ \\____/\\ \\_\\ \\ \\_\\ \\_\\ \\_\\ \\_\\ \\_\\ \\____ \\ \\_\\\\ \\_\\ \\____/.github.io\n" +
+        "   \\/_/ \\/_/\\/___/  \\/_/  \\/_/\\/_/\\/_/\\/_/\\/_/\\/___L\\ \\/_/ \\/_/\\/___/ 's personal website\n" +
+        "                                                /\\____/ <span class='datetime'>Current Time: loading...</span>\n" +
+        "                                                \\_/__/\n" +
+        "========================================================================================================================\n" +
+        "Navigation bar ::  " + navBar + "\n" +
+        "========================================================================================================================\n" +
+        "<noscript>[!] It seems that you have JavaScript disabled (or your browser doesn't support it). Please enable it to see the website properly.</noscript>\n" +
+        "</pre>";
+
+    // Footer HTML content
+    const footerHTML = "<pre>\n" +
+        "------------------------------------------------------------------------------------------------------------------------\n" +
+        "Powered by <a href=\"https://pages.github.com/\">GitHub Pages</a>. View source <a href=\"https://github.com/MorningMC/MorningMC.github.io\">here</a>.\n" +
+        "</pre>";
+
+    // Insert the header and the footer into the page
+    body.insertAdjacentHTML("afterbegin", headerHTML);
+    body.insertAdjacentHTML("beforeend", footerHTML);
+
+    // Format the current time as ISO 8601 with milliseconds and timezone (e.g., 2025-04-26T14:09:53.018+0800)
+    function updateClock() {
+        const now = new Date();
+
+        // Timezone offset in minutes, convert to +HHMM format
+        const tzOffset = -now.getTimezoneOffset();
+        const sign = tzOffset >= 0 ? "+" : "-";
+        const pad = (n, len = 2) => String(Math.abs(n)).padStart(len, "0");
+        const tzHours = pad(Math.floor(Math.abs(tzOffset) / 60));
+        const tzMinutes = pad(Math.abs(tzOffset) % 60);
+        const timezone = sign + tzHours + tzMinutes;
+
+        const timestamp = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}T${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}.${pad(now.getMilliseconds(), 3)}${timezone}`;
+
+        const timeEl = document.querySelector(".datetime");
+        if (timeEl) {
+            timeEl.textContent = "Current Time: " + timestamp;
+        }
+    }
+
+    // Initialize and keep updating every second
+    updateClock();
+    setInterval(updateClock, 100);
+});

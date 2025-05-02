@@ -1,12 +1,16 @@
 body {
     color: white;
     background-color: black;
-}
-
-pre {
     font-family: "Fixedsys Excelsior 3.01", monospace;
     font-size: 16px;
     tab-size: 4;
+}
+
+pre, p {
+    font-size: inherit;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -16,21 +20,24 @@ h1 {
     text-decoration: underline;
 }
 
-em {
+em, .datetime {
     color: gray;
 }
 
 a {
     color: inherit;
-    text-decoration: dotted underline;
-    text-decoration-color: lightgray;
+    text-decoration: dotted underline lightgray;
 }
 
 a:hover {
     text-decoration-color: lightskyblue;
 }
 
-time {
+details:is([open]) {
+    margin-bottom: 1em;
+}
+
+summary {
     font-weight: bold;
 }
 
