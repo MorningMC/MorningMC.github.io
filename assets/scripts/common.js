@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         " \\ \\ \\_/\\ \\/\\ \\L\\ \\ \\ \\/ /\\ \\/\\ \\ \\ \\/\\ \\/\\ \\/\\ \\L\\ \\ \\ \\_/\\ \\ \\ \\L\\ \\\n" +
         "  \\ \\_\\\\ \\_\\ \\____/\\ \\_\\ \\ \\_\\ \\_\\ \\_\\ \\_\\ \\_\\ \\____ \\ \\_\\\\ \\_\\ \\____/.github.io\n" +
         "   \\/_/ \\/_/\\/___/  \\/_/  \\/_/\\/_/\\/_/\\/_/\\/_/\\/___L\\ \\/_/ \\/_/\\/___/ 's personal website\n" +
-        "                                                /\\____/ <span class='datetime'>Current Time: loading...</span>\n" +
+        "                                                /\\____/   <span class='datetime'>Loading time...</span>\n" +
         "                                                \\_/__/\n" +
         "========================================================================================================================\n" +
         "Navigation bar ::  " + navBar + "\n" +
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     body.insertAdjacentHTML("afterbegin", headerHTML);
     body.insertAdjacentHTML("beforeend", footerHTML);
 
-    // Format the current time as ISO 8601 with milliseconds and timezone (e.g., 2025-04-26T14:09:53.018+0800)
+    // Format the current time as ISO 8601 with milliseconds and timezone (yyyy-MM-dd'T'HH:mm:ss.SSSZZ)
     function updateClock() {
         const now = new Date();
 
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const timeEl = document.querySelector(".datetime");
         if (timeEl) {
-            timeEl.textContent = "Current Time: " + timestamp;
+            timeEl.textContent = timestamp;
         }
     }
 
