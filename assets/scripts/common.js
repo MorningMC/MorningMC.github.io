@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     body.insertAdjacentHTML("beforeend", footerHTML);
 
     // Format the current time as ISO 8601 with milliseconds and timezone (yyyy-MM-dd'T'HH:mm:ss.SSSZZ)
-    function updateClock() {
+    const updateClock = () => {
         const now = new Date();
 
         // Timezone offset in minutes, convert to +HHMM format
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Initialize and keep updating every second
+    // Initialize and keep updating every 100 milliseconds
     updateClock();
     setInterval(updateClock, 100);
 });
