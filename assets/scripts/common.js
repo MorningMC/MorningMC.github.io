@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
 
-    // Get the current <script> element and its data-selected-index attribute
+    // Get the current <script> element and its data-selected-index and title attribute
     const currentScript = document.querySelector('script[src$="common.js"]');
-    const selectedIndex = parseInt(currentScript?.getAttribute("data-selected-index") ?? "-1", 10);
+    const selectedIndex = parseInt(currentScript?.getAttribute("tabindex") ?? "-1", 10);
+    const sectionTitle = currentScript?.getAttribute("title") ?? "";
 
     // Define the navigation links and labels
     const navLinks = [
@@ -14,6 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
         { href: "utils.html", label: "Utils" },
         { href: "debug.html", label: "Debug" }
     ];
+
+    // Update <title> element dynamically
+    if (selectedIndex >= 0 && selectedIndex < navLinks.length) {
+        const sectionPath = sectionTitle ? " / " + sectionTitle : "";
+        document.title = `${navLinks[selectedIndex].label}${sectionPath} @ MorningMC.github.io`;
+    }
 
     // Generate the navigation bar with > < marker for selected item
     const navBar = navLinks.map((link, i) => {
@@ -45,15 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "Powered by <a href=\"https://pages.github.com/\">GitHub Pages</a>. View source <a href=\"https://github.com/MorningMC/MorningMC.github.io\">here</a>.\n" +
         "</pre>";
 
-    // Insert the header and the footer into the page
+    // Insert the header and footer
     body.insertAdjacentHTML("afterbegin", headerHTML);
     body.insertAdjacentHTML("beforeend", footerHTML);
 
-    // Format the current time as ISO 8601 with milliseconds and timezone (yyyy-MM-dd'T'HH:mm:ss.SSSZZ)
+    // Format and update the current time
     const updateClock = () => {
         const now = new Date();
 
-        // Timezone offset in minutes, convert to +HHMM format
         const tzOffset = -now.getTimezoneOffset();
         const sign = tzOffset >= 0 ? "+" : "-";
         const pad = (n, len = 2) => String(Math.abs(n)).padStart(len, "0");
@@ -67,9 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (timeEl) {
             timeEl.textContent = timestamp;
         }
-    }
+    };
 
-    // Initialize and keep updating every 100 milliseconds
     updateClock();
     setInterval(updateClock, 100);
 });

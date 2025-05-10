@@ -13,11 +13,10 @@ pre, p {
     padding: 0;
 }
 
-h1 {
+strong, summary, h1 {
     font-size: inherit;
     font-weight: bold;
     color: gold;
-    text-decoration: underline;
 }
 
 em, .datetime {
@@ -35,10 +34,6 @@ a:hover {
 
 details:is([open]) {
     margin-bottom: 1em;
-}
-
-summary {
-    font-weight: bold;
 }
 
 noscript {
