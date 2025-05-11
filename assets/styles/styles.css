@@ -1,9 +1,10 @@
 body {
     color: white;
-    background-color: black;
     font-family: "Fixedsys Excelsior 3.01", monospace;
     font-size: 16px;
     tab-size: 4;
+    background: black url("/assets/images/background.png") no-repeat center center fixed;
+    background-size: cover;
 }
 
 pre, p {
