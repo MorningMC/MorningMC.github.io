@@ -16,7 +16,8 @@ pre, p {
 
 strong, summary, h1 {
     font-size: inherit;
-    font-weight: bold;
+    font-weight: inherit;
+    text-decoration: underline;
     color: gold;
 }
 

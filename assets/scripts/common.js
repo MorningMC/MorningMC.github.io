@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
 
-    // Get the current <script> element and its data-selected-index and title attribute
+    // Get the current <script> element and its tabindex, title and prefix attribute
     const currentScript = document.querySelector('script[src$="common.js"]');
     const selectedIndex = parseInt(currentScript?.getAttribute("tabindex") ?? "-1", 10);
     const sectionTitle = currentScript?.getAttribute("title") ?? "";
+    const pathPrefix = currentScript?.getAttribute("prefix") ?? "";
 
     // Define the navigation links and labels
     const navLinks = [
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navBar = navLinks.map((link, i) => {
         const mark = i === selectedIndex ? ">" : " ";
         const backMark = i === selectedIndex ? "<" : " ";
-        return mark + " <a href=\"" + link.href + "\">" + link.label + "</a> " + backMark;
+        return `${mark} <a href="${pathPrefix}${link.href}">${link.label}</a> ${backMark}`;
     }).join("  ");
 
     // Header HTML content with placeholder for dynamic time
