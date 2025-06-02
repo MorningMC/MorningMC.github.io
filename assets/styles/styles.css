@@ -4,7 +4,7 @@ body {
     font-size: 16px;
     tab-size: 4;
     background: black url("/assets/images/background.png") no-repeat center center fixed;
-    background-size: cover;
+    background-size: 50%;
 }
 
 pre, p {
