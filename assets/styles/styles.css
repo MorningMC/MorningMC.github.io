@@ -1,6 +1,6 @@
 body {
     color: white;
-    font-family: "Fixedsys Excelsior 3.01", monospace;
+    font-family: "FixedsysMono Nerd Font Mono", "Fixedsys Excelsior 3.01", monospace;
     font-size: 16px;
     tab-size: 4;
     background: black url("/assets/images/background.png") no-repeat center center fixed;
@@ -45,4 +45,9 @@ noscript {
 @font-face {
     font-family: "Fixedsys Excelsior 3.01";
     src: url("/assets/fonts/FSEX300.ttf");
+}
+
+@font-face {
+    font-family: "FixedsysMono Nerd Font Mono";
+    src: url("/assets/fonts/FixedsysMono_Mod-NerdFont.ttf");
 }
