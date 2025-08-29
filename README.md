@@ -1,1 +1,1 @@
-# MorningMC.github.io
+# MorningMC.qzz.io

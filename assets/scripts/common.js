@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update <title> element dynamically
     if (selectedIndex >= 0 && selectedIndex < navLinks.length) {
         const sectionPath = sectionTitle ? " / " + sectionTitle : "";
-        document.title = `${navLinks[selectedIndex].label}${sectionPath} @ MorningMC.github.io`;
+        document.title = `${navLinks[selectedIndex].label}${sectionPath} @ MorningMC.qzz.io`;
     }
 
     // Generate the navigation bar with > < marker for selected item
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "/\\      \\    ___   _ __    ___ /\\_\\    ___      __ /\\      \\ \\ \\/\\_\\\n" +
         "\\ \\ \\__\\ \\  / __`\\/\\`'__\\/' _ `\\/\\ \\ /' _ `\\  /'_ `\\ \\ \\__\\ \\ \\ \\/_/_\n" +
         " \\ \\ \\_/\\ \\/\\ \\L\\ \\ \\ \\/ /\\ \\/\\ \\ \\ \\/\\ \\/\\ \\/\\ \\L\\ \\ \\ \\_/\\ \\ \\ \\L\\ \\\n" +
-        "  \\ \\_\\\\ \\_\\ \\____/\\ \\_\\ \\ \\_\\ \\_\\ \\_\\ \\_\\ \\_\\ \\____ \\ \\_\\\\ \\_\\ \\____/.github.io\n" +
+        "  \\ \\_\\\\ \\_\\ \\____/\\ \\_\\ \\ \\_\\ \\_\\ \\_\\ \\_\\ \\_\\ \\____ \\ \\_\\\\ \\_\\ \\____/.qzz.io\n" +
         "   \\/_/ \\/_/\\/___/  \\/_/  \\/_/\\/_/\\/_/\\/_/\\/_/\\/___L\\ \\/_/ \\/_/\\/___/ 's personal website\n" +
         "                                                /\\____/   <span class='datetime'>Loading time...</span>\n" +
         "                                                \\_/__/\n" +
