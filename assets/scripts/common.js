@@ -77,5 +77,5 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     updateClock();
-    setInterval(updateClock, 100);
+    setInterval(updateClock, 64);
 });
