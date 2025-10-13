@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update <title> element dynamically
     if (selectedIndex >= 0 && selectedIndex < navLinks.length) {
-        const sectionPath = sectionTitle ? " / " + sectionTitle : "";
+        const sectionPath = sectionTitle ? ` / ${sectionTitle}` : "";
         document.title = `${navLinks[selectedIndex].label}${sectionPath} @ MorningMC.qzz.io`;
     }
 

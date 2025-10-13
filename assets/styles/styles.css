@@ -21,8 +21,12 @@ strong, summary, h1 {
     color: gold;
 }
 
-em, .datetime {
+em {
     color: gray;
+}
+
+.datetime {
+    color: darkgray;
 }
 
 a {
