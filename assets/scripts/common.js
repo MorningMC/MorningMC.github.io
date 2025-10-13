@@ -44,13 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "========================================================================================================================\n" +
         "Navigation bar ::  " + navBar + "\n" +
         "========================================================================================================================\n" +
-        "<noscript>[!] It seems that you have JavaScript disabled (or your browser doesn't support it). Please enable it to see the website properly.</noscript>\n" +
-        "</pre>";
+        // "<noscript>[!] It seems that you have JavaScript disabled (or your browser doesn't support it). Please enable it to see the website properly.</noscript>\n" +
+        "\n</pre>";
 
     // Footer HTML content
     const footerHTML = "<pre>\n" +
         "------------------------------------------------------------------------------------------------------------------------\n" +
         "Powered by <a href=\"https://pages.github.com/\">GitHub Pages</a>. View source <a href=\"https://github.com/MorningMC/MorningMC.github.io\">here</a>.\n" +
+        "Copyright (c) 2025 MorningMC <span style='color: darkgray'>lincensed under <a href=\"https://mit-license.org/\">MIT License</a>. Full document see <a href=\"LICENSE.txt\">here</a>.</span>\n" +
         "</pre>";
 
     // Insert the header and footer
