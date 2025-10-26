@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
         { href: "index.html", label: "Index" },
         { href: "projects.html", label: "Projects" },
         { href: "videos.html", label: "Videos" },
-        { href: "notepad.html", label: "Notepad" },
         { href: "utils.html", label: "Utils" },
         { href: "debug.html", label: "Debug" }
     ];
